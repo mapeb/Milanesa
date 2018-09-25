@@ -23,8 +23,9 @@
     components: {ComidaDropdown},
     methods: {
       agregarPedido() {
-        this.$emit('nuevoPedido',{pino: this.pino, comida: this.comida, id: this.id, coste: 150})
-        this. id += 1
+        const pedido = {pino: this.pino, comida: this.comida, id: this.id, coste: 150}
+        this.$store.commit('agregarPedido', pedido);
+        this.id += 1
       },
       comidaSeleccionada(comida) {
         this.comida = comida

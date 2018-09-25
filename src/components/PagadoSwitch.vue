@@ -1,5 +1,5 @@
 <template>
-  <switches/>
+  <switches color="red" v-model="enabled"/>
 </template>
 
 <script>
@@ -12,7 +12,7 @@
     },
     data: function () {
       return {
-        enabled: false
+        enabled: true
       }
     }
   }

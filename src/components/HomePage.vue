@@ -9,7 +9,7 @@
         <th>Precio</th>
         <th>Pago</th>
       </tr>
-      <tr v-for="pedido in pedidos">
+      <tr v-for="pedido in pedidosDeComida">
         <td>{{pedido.id}}</td>
         <td>{{pedido.pino}}</td>
         <td>
@@ -21,32 +21,32 @@
         </td>
       </tr>
     </table>
-      <PinoForm v-on:nuevoPedido="agregarPedido"/>
+    <PedidoForm/>
   </div>
 </template>
 
 <script>
   import ComidaDropdown from "./ComidaDropdown";
   import PagadoSwitch from "./PagadoSwitch";
-  import PinoForm from "./PinoForm";
+  import PedidoForm from "./PedidoForm";
+  import store from '../store/index';
+  import {mapState} from 'vuex';
 
   export default {
     name: "HomePage",
     components: {
-      PinoForm,
+      PedidoForm,
       'ComidaDropdown': ComidaDropdown,
       'PagadoSwitch': PagadoSwitch
     },
-    data() {
-      return {
-        pedidos: []
+    computed:
+      {
+        pedidosDeComida() {
+          return this.$store.state.pedidos
+        }
       }
-    },
-    methods: {
-      agregarPedido(pedido) {
-        this.pedidos.push(pedido)
-      }
-    }
+    // computed: mapState(['pedidos']),
+
   }
 </script>
 
