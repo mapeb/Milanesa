@@ -12,9 +12,9 @@
       <tr v-for="pedido in pedidosDeComida">
         <td>{{pedido.id}}</td>
         <td>{{pedido.pino}}</td>
-        <td>
-          <ComidaDropdown/>
-        </td>
+        <td>{{pedido.comida}}</td>
+         <!-- <ComidaDropdown/>
+        </td-->
         <td>{{pedido.coste}}</td>
         <td>
           <PagadoSwitch/>

@@ -5,15 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    pedidos: [],
-    comidas: []
+    pedidos: [{}],
+    comidas: [{}],
   },
   mutations: {
-    agregarPedido(state, pedido) {
-      state.pedidos.push(pedido)
+    agregarPedido(state,pedido) {
+      state.pedidos.push(pedido);
     },
     agregarComida(state, comida) {
-      state.comidas.push(comida)
+      state.comidas.push(comida);
     }
   }
 });
